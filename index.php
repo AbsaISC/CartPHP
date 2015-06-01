@@ -1,4 +1,11 @@
 <!Doctype html>
+<?php
+    session_start();
+    if( $_SESSION ){
+        echo "<script> window.location.href='tienda.php' ; </script>";
+        die();
+    }
+?>
 <html>
     <head>
         <title>index</title>
