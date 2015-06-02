@@ -1,14 +1,14 @@
 <?php
     session_start();
     if( $_SESSION ){
-        echo "<script> window.location.href='client/tienda.php' ; </script>";
+        echo "<script> window.location.href='admin/' ; </script>";
         die();
     }
 ?>
 <!Doctype html>
 <html>
     <head>
-        <title>index</title>
+        <title>admin</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,16 +24,16 @@
         <div class="container">
             <div class="jumbotron">
                 <div class="row">
-                    <h1>Bienvenido a tú carrito de compras</h1>
+                    <h1>Administracíon</h1>
                     <div class="col-xs-6">
-                        <p>Por favor Inicie session con su usuario</p>
+                        <p>Por favor Inicie session con su usuario administrador</p>
                     </div>
                     <div class="col-xs-6">
-                        <form action="servers\login.php" method="post">
+                        <form action="servers\loginAdmin.php" method="post">
                             <table>
                                 <tr><td colspan="2"><p>Login</p></td></tr>
                                 <tr>
-                                    <td><p>Usuario:</p></td>
+                                    <td><p>Admin:</p></td>
                                     <td><input type="text" name="usuario" ></td>
                                 </tr>
                                 <tr>
@@ -44,8 +44,6 @@
                                     <td colspan="2"><input type="submit" value="login" class="btn btn-block"></td>
                                 </tr>
                             </table>
-                            <br><br>
-                            <a href="client/registro.php">No tengo cuenta</a>
 
                         </form>
                     </div>

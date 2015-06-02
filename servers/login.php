@@ -14,12 +14,12 @@ if ($user && $contrasenia) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
             $dbnombre=$row["nombre"]; 
-            $dbcorreo=$row['correo'];
+            $dbid=$row['correo'];
         }
         $_SESSION['nombre']=$dbnombre;
-        $_SESSION['correo']=$dbcorreo;
+        $_SESSION['correo']=$dbid;
 	echo "<script languaje='Javascript'> alert ('Has iniciado sesion exitosamente');
-            window.location.href='../tienda.php';</script>";
+            window.location.href='../client/tienda.php';</script>";
     } else {
        echo "<script languaje='Javascript'> alert ('No se encontro el usuario porfavor introduce usuario y contraseña correctamente');
             window.location.href='../';</script>";

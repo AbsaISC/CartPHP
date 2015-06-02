@@ -1,17 +1,17 @@
 <?php
     session_start();
-    if( $_SESSION['nombre'] != null ){
+    if( $_SESSION ){
         echo "<script> window.location.href='tienda.php' ; </script>";
         die();
     }
 ?>
 <html>
     <head><title>Registro</title></head>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/calc.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/calc.css">
 
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <body>
         <div class="container">
             <div class="jumbotron">
@@ -19,7 +19,7 @@
             </div>
 
             <div class="row">
-                <form action="servers\registra.php" method="post" >
+                <form action="..\servers\registra.php" method="post" >
                     <table >
                         <tr><td>Nombre:</td>
                             <td><input type="text" name="nombre" ></td></tr>

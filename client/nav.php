@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?
+#php session_start();
+?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -15,7 +17,7 @@
         <div >
             <ul class="nav navbar-right">
                 <li ><?php echo $_SESSION['nombre']; ?></li>
-                <li><a href="servers/logout.php">Logout</a></li>
+                <li><a href="../servers/logout.php">Logout</a></li>
             </ul>
         </div>
     </div>
