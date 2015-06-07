@@ -1,9 +1,13 @@
 <?php
-    session_start();
-    if( $_SESSION ){
-        echo "<script> window.location.href='client/tienda.php' ; </script>";
+session_start();
+if ($_SESSION) {
+    if ($_SESSION['tipo']) {
+        echo "<script> window.location.href='admin/' ; </script>";
         die();
     }
+    echo "<script> window.location.href='client/tienda.php' ; </script>";
+    die();
+}
 ?>
 <!Doctype html>
 <html>

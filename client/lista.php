@@ -23,37 +23,43 @@ include_once('../servers/fetchProducts.php');
         <?php
         include 'nav.php';
         ?>
-        <table>
-            <tr>
-                <th>
-                    Id
-                </th>
-                <th>Imagen</th>
-                <th>Producto</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Existencia</th>
-                <th colspan="2">Acción</th>
-            </tr>
+        <form >
+            <table class="table table-stripede">
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Existencia</th>
+                    <th colspan="2">Acción</th>
+                </tr>
 
-            <?php
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>"
-                    . "<td>" . $row['idProducto'] . "</td>"
-                    . "<td>" . $row['imagen'] . "</td>"
-                    . "<td>" . $row['producto'] . "</td>"
-                    . "<td>" . $row['descripcion'] . "</td>"
-                    . "<td>" . $row['precio'] . "</td>"
-                    . "<td>" . $row['existencia'] . "</td>"
-                    . "</tr>";
+                <?php
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $idIm= $row['idProducto'];
+                        echo "<tr>"
+                        . "<form><input type='text' hidden name='id' value='" .$row['idProducto'] . "' >"
+                        . "<td>" . $row['idProducto'] . "</td>";
+                        echo "<td> <img width='50' height='50' src='../servers/showImage.php?id=".$idIm."' > </td>";
+                        echo "<td>" . $row['producto'] . "</td>"
+                        . "<td>" . $row['descripcion'] . "</td>"
+                        . "<td>" . $row['precio'] . "</td>"
+                        . "<td>" . $row['existencia'] . "</td>"
+                        . "<td><input type='number'  name='cant' value='1' size='10 ' maxlength='3' ></td>"
+                        . "<td><input type='submit' class='btn' value='Agregar' formaction='../servers/addItem.php' formmethod='POST' ></td>"
+                        . "</form>"
+                        . "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='8'>no se encontraron datos</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='8'>no se encontraron datos</td></tr>";
-            }
-            ?>
-        </table>
-
+                ?>
+            </table>
+        </form>
     </body>
 </html>
